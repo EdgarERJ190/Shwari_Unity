@@ -1,0 +1,168 @@
+/* Ensure the body and html have no margin or padding and take the full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the video container to cover the entire screen */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the video is behind other elements */
+    overflow: hidden;
+}
+
+/* Ensure the video covers the entire video container */
+#backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area without stretching */
+}
+
+/* Center the form container */
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the form container */
+.form-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    color: white;
+}
+
+/* Ensure the form header buttons are styled */
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 150px;
+}
+
+.btn-tab.active, .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+/* Style the buttons for switching between login and signup */
+
+.btn-tab {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    outline: none;
+    border-radius: 5px;
+}
+
+.btn-tab:hover {
+    background: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+.btn-tab:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.btn-tab.active {
+    background: #0056b3;
+}
+
+
+/* Hide forms by default */
+.form {
+    display: none;
+}
+
+/* Display the forms that are not hidden */
+.form:not(.hidden) {
+    display: block;
+}
+
+/* Style input groups */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Style icons in the input group */
+.input-group i {
+    margin-right: 10px;
+}
+
+/* Style inputs */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Style the submit button */
+.btn {
+    background-color: #f0c14b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Style the forgot password link */
+.forgot-password {
+    margin-bottom: 15px;
+}
+
+/* Style the forgot password link */
+.forgot-password a {
+    color: #f0c14b;
+    text-decoration: none;
+}
+
+/* Style the social login button */
+.social-login {
+    margin-top: 20px;
+}
+
+/* Style the Google login button */
+.social-login .google-login {
+    background-color: #db4437;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Style the form footer */
+.form-footer {
+    margin-top: 15px;
+}
+
+/* Style the links in the form footer */
+.form-footer a {
+    color: #f0c14b;
+    text-decoration: none;
+}

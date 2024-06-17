@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Shop</title>
+<link rel="stylesheet" href="GiftShop.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="gift-shop">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'flowers')">Flowers</button>
+        <button class="tablinks" onclick="openTab(event, 'gifts')">Gifts</button>
+        <button class="tablinks" onclick="openTab(event, 'toys')">Toys</button>
+    </div>
+
+    <div id="flowers" class="tabcontent">
+        <div class="product">
+            <img src="img/flowers1.jpg" alt="Flowers 1">
+            <div class="overlay">
+                <h3>Flower Bouquet</h3>
+                <p>$25</p>
+                <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more flower products as needed -->
+    </div>
+
+    <div id="gifts" class="tabcontent">
+        <div class="product">
+            <img src="img/gift1.jpg" alt="Gift 1">
+            <div class="overlay">
+                <h3>Chocolate Box</h3>
+                <p>$15</p>
+                <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more gift products as needed -->
+    </div>
+
+    <div id="toys" class="tabcontent">
+        <div class="product">
+            <img src="img/toy1.jpg" alt="Toy 1">
+            <div class="overlay">
+                <h3>Stuffed Bear</h3>
+                <p>$10</p>
+                <button><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more toy products as needed -->
+    </div>
+</div>
+
+<script src="GiftShop.js"></script>
+</body>
+</html>

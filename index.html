@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shwari - Medical Care</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Shwari Caregivers Logo">
+            </div>
+            
+            <ul>
+                <li><a href="GiftShop.html"><i class="fas fa-gift"></i> Gift Shop</a></li>
+                <li><a href="Caregiverlogin.html"><i class="fas fa-user-nurse"></i> Caregiver Dashboard</a></li>
+                <li><a href="patientlogin.html"><i class="fas fa-user-injured"></i> Patient Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ferris-wheel-container">
+        <div class="ferris-wheel">
+            <div class="ferris-wheel-slide" data-title="Compassionate Care" data-content="Providing the best care with empathy and understanding.">
+                <img src="img/slides1.jpg" alt="Slide 1">
+            </div>
+            <div class="ferris-wheel-slide" data-title="Advanced Medical Solutions" data-content="Utilizing state-of-the-art technology for better outcomes.">
+                <img src="img/slides2.jpg" alt="Slide 2">
+            </div>
+            <div class="ferris-wheel-slide" data-title="Personalized Treatment" data-content="Customized care plans tailored to individual needs.">
+                <img src="img/slides3.jpg" alt="Slide 3">
+            </div>
+            <div class="ferris-wheel-slide" data-title="Professional Staff" data-content="Experienced and dedicated healthcare professionals.">
+                <img src="img/slides4.jpg" alt="Slide 4">
+            </div>
+            <div class="ferris-wheel-slide" data-title="24/7 Support" data-content="Round-the-clock assistance for all your healthcare needs.">
+                <img src="img/slides5.jpg" alt="Slide 5">
+            </div>
+        </div>
+        <div class="description-box">
+            <h2 id="slideTitle">Compassionate Care</h2>
+            <p id="slideContent">Providing the best care with empathy and understanding.</p>
+        </div>
+    </div>
+
+    <div class="section about-us">
+        <div class="space-background">
+            <div class="typing-container">
+                <h2>About Us</h2>
+                <p id="aboutUsText"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section developer">
+        <h2>Meet the Team</h2>
+        <div class="floating-images">
+            <div class="floating-image">
+                <!-- Developer 1 -->
+                <div class="circle-image">
+                    <img src="img/alfred.jpg" alt="Developer 1">
+                    <div class="developer-info">
+                        <h3>Alfred Gitonga</h3>
+                        <p>Frontend Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-image">
+                <!-- Developer 2 -->
+                <div class="circle-image">
+                    <img src="img/zakiya.jpg" alt="Developer 2">
+                    <div class="developer-info">
+                        <h3>Zakiya Noor</h3>
+                        <p>Backend Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-image">
+                <!-- Developer 3 -->
+                <div class="circle-image">
+                    <img src="img/diana.jpg" alt="Developer 3">
+                    <div class="developer-info">
+                        <h3>Diana Mucheke</h3>
+                        <p>UI/UX Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-image">
+                <!-- Developer 4 -->
+                <div class="circle-image">
+                    <img src="img/edgar.jpg" alt="Developer 4">
+                    <div class="developer-info">
+                        <h3>Edgar Omondi</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutUsText = document.getElementById('aboutUsText');
+            const text = "Shwari Caregivers are dedicated to taking care of the elderly, providing speech therapy, medication management, and personalized attention. We also specialize in educating postpartum mothers about their health and nutrition, ensuring the well-being of both their babies and themselves.";
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    aboutUsText.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 50);
+                }
+            }
+
+            typeEffect();
+        });
+    </script>
+</body>
+</html>
