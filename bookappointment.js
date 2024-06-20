@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     appointmentForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const appointment = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            date: document.getElementById('date').value,
-            time: document.getElementById('time').value,
+            name: getInputValue('name'),
+            email: getInputValue('email'),
+            phone: getInputValue('phone'),
+            date: getInputValue('date'),
+            time: getInputValue('time'),
             country: countrySelect.options[countrySelect.selectedIndex].text,
             timezone: timezoneSelect.value
         };
@@ -30,14 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
         appointmentForm.reset();
     });
 
+    function getInputValue(id) {
+        return document.getElementById(id).value.trim();
+    }
+
     function initializeDateTime() {
         // Set current time
         const now = new Date();
         const formattedDate = now.toISOString().split('T')[0]; // Format as yyyy-mm-dd
         const formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-        document.getElementById('date').value = formattedDate;
-        document.getElementById('time').value = formattedTime;
+        setInputValue('date', formattedDate);
+        setInputValue('time', formattedTime);
 
         // Populate countries (example options, replace with actual country options as needed)
         const countries = [
@@ -47,12 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add more countries as needed
         ];
 
-        countries.forEach(country => {
-            const option = document.createElement('option');
-            option.value = country.code;
-            option.textContent = country.name;
-            countrySelect.appendChild(option);
-        });
+        populateSelectOptions(countrySelect, countries, 'name', 'code');
 
         // Populate timezones (example options, replace with actual timezone options as needed)
         const timezones = [
@@ -62,11 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add more timezone options as needed
         ];
 
-        timezones.forEach(timezone => {
-            const option = document.createElement('option');
-            option.value = timezone.value;
-            option.textContent = timezone.label;
-            timezoneSelect.appendChild(option);
+        populateSelectOptions(timezoneSelect, timezones, 'label', 'value');
+    }
+
+    function setInputValue(id, value) {
+        document.getElementById(id).value = value;
+    }
+
+    function populateSelectOptions(selectElement, optionsArray, textKey, valueKey) {
+        optionsArray.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option[valueKey];
+            optionElement.textContent = option[textKey];
+            selectElement.appendChild(optionElement);
         });
     }
 
