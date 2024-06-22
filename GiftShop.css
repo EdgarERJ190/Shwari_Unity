@@ -1,59 +1,94 @@
-/* Ensure the body and html have no margin or padding and take the full height */
-body, html {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Center the container */
-.container {
-    padding: 20px;
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    width: 100%;
+}
+
+section {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 2em;
+    padding: 2em;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+#product-list, #cart-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product, .cart-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width: calc(33.333% - 2em);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product img, .cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product button, .cart-item button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.product button:hover, .cart-item button:hover {
+    background-color: #45a049;
+}
+
+#cart-summary {
+    margin-top: 1em;
     text-align: center;
 }
 
-/* Style the shop items container */
-.shop-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+#cart-summary p {
+    font-size: 1.2em;
 }
 
-/* Style individual shop items */
-.shop-item {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+#cart-summary button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1em;
 }
 
-/* Hover effect for shop items */
-.shop-item:hover {
-    transform: scale(1.05);
-}
-
-/* Style the item images */
-.item-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-/* Style the item information */
-.item-info {
-    padding: 15px;
-}
-
-.item-info h2 {
-    font-size: 1.25em;
-    margin: 10px 0;
-}
-
-.item-info .price {
-    font-size: 1.1em;
-    color: #555;
+#cart-summary button:hover {
+    background-color: #45a049;
 }
