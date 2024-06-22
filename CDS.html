@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immunization Checkpoints</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Child Development Simulator</title>
+    <link rel="stylesheet" href="CDS.css">
+    <script defer src="CDS.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Immunization & Vaccination Checkpoints</h1>
-        <div class="timeline">
-            <div class="checkpoint" id="checkpoint1">
-                <div class="info">
-                    <h2>Birth</h2>
-                    <p>Hepatitis B vaccine (HepB)</p>
+        <div class="header">
+            <h1>Child Development Simulator</h1>
+            <p>Use the slider to adjust the child's age and see the development milestones and immunization checkpoints.</p>
+        </div>
+        <div class="content">
+            <div class="simulator">
+                <div class="child-icon">
+                    <img id="childImage" src="img/child_0.png" alt="Child Icon">
+                </div>
+                <div class="controls">
+                    <input type="range" id="ageSlider" min="0" max="18" value="0">
+                    <label for="ageSlider">Age: <span id="ageDisplay">0</span> years</label>
                 </div>
             </div>
-            <div class="checkpoint" id="checkpoint2">
-                <div class="info">
-                    <h2>2 Months</h2>
-                    <p>Diphtheria, tetanus, and whooping cough (DTaP)</p>
-                    <p>Polio (IPV)</p>
-                    <p>Hepatitis B (HepB)</p>
-                    <p>Rotavirus (RV)</p>
-                </div>
+            <div class="info-panel">
+                <h2>Development Milestones</h2>
+                <ul id="milestonesList"></ul>
+                <h2>Immunization Checkpoints</h2>
+                <ul id="immunizationList"></ul>
             </div>
-            <div class="checkpoint" id="checkpoint3">
-                <div class="info">
-                    <h2>4 Months</h2>
-                    <p>Diphtheria, tetanus, and whooping cough (DTaP)</p>
-                    <p>Polio (IPV)</p>
-                    <p>Rotavirus (RV)</p>
-                </div>
-            </div>
-            <!-- Add more checkpoints as needed -->
         </div>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,40 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const quotesContainer = document.querySelector('.quotes-container');
+    const quoteStoryContent = document.getElementById('quoteStoryContent');
+    const generateQuoteButton = document.getElementById('generateQuote');
+    const generateStoryButton = document.getElementById('generateStory');
+    const apiKey = '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'; // Replace with your actual API key
 
-    const quotes = [
-        {
-            title: "🌟 Inspirational Quote 1",
-            content: "The best way to predict the future is to invent it.",
-            author: "Alan Kay"
-        },
-        {
-            title: "📖 Inspirational Story 1",
-            content: "Once upon a time, in a land far away...",
-            author: "Anonymous"
-        },
-        {
-            title: "💪 Inspirational Quote 2",
-            content: "Life is 10% what happens to us and 90% how we react to it.",
-            author: "Charles R. Swindoll"
-        },
-        {
-            title: "🌼 Inspirational Story 2",
-            content: "There was a young boy who lived in a small village...",
-            author: "Anonymous"
-        },
-        // Add more quotes and stories as needed
-    ];
-
-    quotes.forEach(quote => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        
-        card.innerHTML = `
-            <h2>${quote.title}</h2>
-            <p>${quote.content}</p>
-            <div class="author">- ${quote.author}</div>
-        `;
-
-        quotesContainer.appendChild(card);
+    generateQuoteButton.addEventListener('click', () => {
+        fetchContent('quote');
     });
+
+    generateStoryButton.addEventListener('click', () => {
+        fetchContent('story');
+    });
+
+    async function fetchContent(type) {
+        const endpoint = 'https://api.openai.com/v1/completions';
+        let prompt = '';
+
+        if (type === 'quote') {
+            prompt = 'Generate an inspiring quote for mothers.';
+        } else if (type === 'story') {
+            prompt = 'Generate a short, uplifting story for mothers.';
+        } else {
+            console.error('Invalid content type.');
+            return;
+        }
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'text-davinci-003',
+                    prompt: prompt,
+                    max_tokens: 100
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            const content = data.choices[0].text.trim();
+            quoteStoryContent.innerHTML = `<p>${content}</p>`;
+        } catch (error) {
+            console.error('Error fetching content:', error);
+            quoteStoryContent.innerHTML = '<p>Failed to fetch content. Please try again later.</p>';
+        }
+    }
 });

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.navigation-button');
     const mainContent = document.getElementById('main-content');
+    const welcomeMessage = document.getElementById('welcomeMessage');
 
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(html => {
                 mainContent.innerHTML = html;
+                if (welcomeMessage) {
+                    welcomeMessage.style.display = 'none';
+                }
                 executeScriptForContent(target); // Execute specific script after loading content
             })
             .catch(error => {

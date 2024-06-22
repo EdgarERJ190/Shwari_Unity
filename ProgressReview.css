@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    width: 100%;
+}
+
+section {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 2em;
+    padding: 2em;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+.progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.stacked-bar {
+    width: 100%;
+    height: 1.5em;
+    background-color: #ddd;
+    border-radius: 0.75em;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.5s;
+}
+
+.progress.diagnosis {
+    width: 70%; /* Example percentage */
+}
+
+.progress.medicine {
+    width: 50%; /* Example percentage */
+}
+
+.progress.calls {
+    width: 90%; /* Example percentage */
+}
+
+#history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.history-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.history-item h3 {
+    margin: 0;
+}
+
+.history-item p {
+    margin: 0.5em 0 0 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+}

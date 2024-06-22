@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Progress Review</title>
+    <link rel="stylesheet" href="ProgressReview.css">
+</head>
+<body>
+    <header>
+        <h1>Patient Progress Review</h1>
+        <p>Track and review the history of patient interactions and progress.</p>
+    </header>
+
+    <section id="overview">
+        <h2>Current Progress Overview</h2>
+        <div class="progress-bars">
+            <div class="progress-container">
+                <span>Diagnosis Progress</span>
+                <div class="stacked-bar">
+                    <div class="progress diagnosis"></div>
+                </div>
+            </div>
+            <div class="progress-container">
+                <span>Medicine Adherence</span>
+                <div class="stacked-bar">
+                    <div class="progress medicine"></div>
+                </div>
+            </div>
+            <div class="progress-container">
+                <span>Follow-up Calls</span>
+                <div class="stacked-bar">
+                    <div class="progress calls"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>Patient History</h2>
+        <div id="history-list">
+            <!-- History items will be dynamically added here -->
+        </div>
+    </section>
+
+    <script src="ProgressReview.js"></script>
+</body>
+</html>

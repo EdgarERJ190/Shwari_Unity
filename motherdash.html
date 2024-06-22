@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mother's Dashboard</title>
     <link rel="stylesheet" href="motherdash.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="navbar">
@@ -21,13 +23,14 @@
         </ul>
     </div>
     <div class="content">
-        <div class="header">
+        <div class="header" id="welcomeMessage">
             <div class="header-bar"></div>
             <h1>Welcome to Your Dashboard</h1>
             <p>Select a tab from the navigation pane to get started.</p>
         </div>
         <div class="main-content" id="main-content">
-            <!-- Content will be loaded here dynamically -->
+            <img src="img/example.jpg" alt="Example Image" class="full-width-image">
+            <!-- More content can be dynamically loaded here -->
         </div>
     </div>
     <script src="motherdash.js"></script>
