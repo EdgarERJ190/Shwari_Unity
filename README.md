@@ -1,2 +1,0 @@
-# ShwariUnity
-Shwari healthcare givers
