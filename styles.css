@@ -1,0 +1,214 @@
+/* Reset some basic elements */
+body, h1, p, ul, li, a, form, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header img {
+    width: 150px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #00aaff;
+    text-align: center;
+}
+
+/* Nav styling */
+nav {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-toggle.active .fas {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    transition: transform 0.5s ease;
+}
+
+nav ul.menu.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1a1a2e;
+    padding: 20px;
+}
+
+nav ul.menu li {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+nav ul.menu li a {
+    text-decoration: none;
+    color: #00aaff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul.menu li a:hover {
+    background-color: #00aaff;
+    color: #1a1a2e;
+}
+
+/* Card styling */
+.card {
+    background: #2e2e4e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 400px;
+    background-color: #333;
+    color: #eaeaea;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0088cc;
+}
+
+/* Link styling */
+a {
+    color: #00aaff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styling for sections */
+.section-title {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #00aaff;
+    text-align: center;
+}
+
+/* Slideshow styling */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-container img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    nav ul.menu {
+        display: none;
+        flex-direction: column;
+    }
+    nav ul.menu.active {
+        display: flex;
+    }
+}

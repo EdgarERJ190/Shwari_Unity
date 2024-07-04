@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Login/Signup</title>
+    <link rel="stylesheet" href="caregiverlogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="video/background.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-inner">
+                <div class="form-header">
+                    <img src="path_to_your_logo/logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+                </div>
+                <form id="loginForm" class="form">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="loginUsername" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="social-login">
+                        <button class="google-login"><i class="fab fa-google"></i> Login with Google</button>
+                    </div>
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+                    </div>
+                </form>
+
+                <form id="signupForm" class="form hidden">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupUsername" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <div class="social-login">
+                        <button class="google-login"><i class="fab fa-google"></i> Sign up with Google</button>
+                    </div>
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                    </div>
+                </form>
+
+                <form id="forgotPasswordForm" class="form hidden">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="forgotPasswordEmail" placeholder="Email" required>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                    <div class="form-footer">
+                        <p>Remembered your password? <a href="#" id="switchToLoginFromForgot">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="caregiverlogin.js"></script>
+</body>
+</html>
